@@ -1126,6 +1126,10 @@ $ just --set os bsd
 
 === Environment Variables
 
+==== Passing environment variables to recipes
+
+===== Exporting just variables
+
 Assignments prefixed with the `export` keyword will be exported to recipes as environment variables:
 
 ```make
@@ -1157,6 +1161,15 @@ BAR := `echo hello $WORLD`
 a $A $B=`echo $A`:
   echo $A $B
 ```
+
+===== Using a .env file
+
+Just can load an .env file. the variables it contains will be available as environment variables to the recipes.
+See here[https://github.com/casey/just#dotenv-integration].
+
+==== Creating just variables from the shell's environment variables
+
+Environment varialbles from the shell can be passed as variables to to just with the functions env_var() and en_var_or_default(), described here[https://github.com/casey/just#environment-variables].
 
 === Recipe Parameters
 
